@@ -7,6 +7,8 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
+from model import NeuralNet
+
 with open('intents.json', 'r') as f:
     intents = json.load(f)
 
@@ -60,9 +62,39 @@ class ChatDataset(Dataset):
 
 
 #Hiperparâmetros
+num_epochs = 1000
 batch_size = 8
+learning_rate = 0.001
+input_size = len(X_train[0]) #bag of words que foi criado -> mesmo que all_words
+hidden_size = 8
+output_size = len(tags) #n° de diferentes classes e tags
 
 dataset = ChatDataset()
-train_loader = DataLoader(dataset = dataset, batch_size = batch_size, shuffle = True, num_workers = 0)
+train_loader = DataLoader(dataset = dataset, batch_size = batch_size, shuffle = True, num_workers = 0) #para iterar automaticamente em cima disso
 
-#para iterar automaticamente em cima disso
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') #verifica se tem GPU disponível
+model = NeuralNet(input_size, hidden_size, output_size).to(device)
+
+#perda e otimizador
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
+#carregar treinamento
+for epoch in range(num_epochs):
+    for(words, labels) in train_loader:
+        words = words.to(device)
+        labels = labels.to(dtype=torch.long).to(device)
+
+        #forward
+        outputs = model(words)
+        loss = criterion(outputs, labels)
+
+        #backward and optimizer step
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    if(epoch + 1) % 100 == 0:
+        print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+        
+print(f'final loss, loss={loss.item():.4f}')
