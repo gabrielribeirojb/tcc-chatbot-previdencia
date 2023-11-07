@@ -1,84 +1,70 @@
 {
   "intents": [
     {
-      "tag": "greeting",
+      "tag": "cumprimentar",
       "patterns": [
-        "Hi",
-        "Hey",
-        "How are you",
-        "Is anyone there?",
-        "Hello",
-        "Good day"
+        "Oi",
+        "Olá",
+        "Como vai?",
+        "Bom dia",
+        "Boa tarde",
+        "Boa noite"
       ],
       "responses": [
-        "Hey :-)",
-        "Hello, thanks for visiting",
-        "Hi there, what can I do for you?",
-        "Hi there, how can I help?"
+        "Oi :)",
+        "Obrigado por nos visitar",
+        "Oi, como posso ajudar?"
       ]
     },
     {
-      "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
-      "responses": [
-        "See you later, thanks for visiting",
-        "Have a nice day",
-        "Bye! Come back again soon."
-      ]
+      "tag": "agradecimento",
+      "patterns": ["Obrigado", "Isso ajudou", "Muito obrigado"],
+      "responses": ["Fico feliz em ajudar", "Precisando, só chamar"]
     },
     {
-      "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      "tag": "aposentar",
+      "patterns": ["Aposentadoria"],
+      "responses": ["A aposentadoria é um benefício pago pela previdência social aos trabalhadores que, cumprindo os requisitos exigidos na lei, tenham atingido a idade mínima e que tenham tempo de contribuição necessários para fazer jus ao direito. Após a reforma da previdência (de acordo com a Emenda Constitucional nº 103), ainda existem os seguintes tipos de aposentadoria que são pagas pelo INSS:\n• Aposentadoria por tempo de contribuição (somente para aqueles que se enquadram nas regras de transição, já que foi extinta pela EC 103);\n• Aposentadoria por idade;\nAposentadoria especial;\n• Aposentadoria por invalidez.\n\nDigite 'idade' para saber mais sobre aposentadoria por idade, digite 'especial' para mais informações sobre aposentadoria espacial ou digite 'invalidez' para saber mais sobre aposentadoria por invalidez."]
     },
     {
-      "tag": "items",
-      "patterns": [
-        "Which items do you have?",
-        "What kinds of items are there?",
-        "What do you sell?"
-      ],
-      "responses": [
-        "We sell coffee and tea",
-        "We have coffee and tea"
-      ]
+      "tag": "idade",
+      "patterns": ["Idade"],
+      "responses": ["A aposentadoria por idade também se desdobra em outras modalidades, como urbana, rural e híbrida. Ela tem como base a idade da pessoa para conquistar o direito ao benefício. De maneira geral, a modalidade solicita, no mínimo, 60 anos para mulheres e 65 anos para os homens. Esse requisito pode ser diferenciado em alguns casos."]
     },
     {
-      "tag": "payments",
-      "patterns": [
-        "Do you take credit cards?",
-        "Do you accept Mastercard?",
-        "Can I pay with Paypal?",
-        "Are you cash only?"
-      ],
-      "responses": [
-        "We accept VISA, Mastercard and Paypal",
-        "We accept most major credit cards, and Paypal"
-      ]
+      "tag": "especial",
+      "patterns": ["Especial"],
+      "responses": ["A aposentadoria por invalidez ou aposentadoria por incapacidade permanente é concedida aos trabalhadores que não são mais considerados aptos, permanentemente, para exercer a suas funções. Essa situação que pode ser causada por diversos motivos, como acidentes, deficiência e doenças progressivas."]
     },
     {
-      "tag": "delivery",
-      "patterns": [
-        "How long does delivery take?",
-        "How long does shipping take?",
-        "When do I get my delivery?"
-      ],
-      "responses": [
-        "Delivery takes 2-4 days",
-        "Shipping takes 2-4 days"
-      ]
+      "tag": "invalidez",
+      "patterns": ["Invalidez"],
+      "responses": ["A aposentadoria por invalidez ou aposentadoria por incapacidade permanente é concedida aos trabalhadores que não são mais considerados aptos, permanentemente, para exercer a suas funções. Essa situação que pode ser causada por diversos motivos, como acidentes, deficiência e doenças progressivas."]
     },
     {
-      "tag": "funny",
-      "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
-      ],
-      "responses": [
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
-      ]
+      "tag": "assistencial",
+      "patterns": ["Assistencial"],
+      "responses": ["O Benefício de Prestação Continuada da Lei Orgânica da Assistência Social (BPC -Loas) é a garantia de um salário mínimo mensal à pessoa com deficiência que comprove não possuir meios de prover a própria manutenção, nem de tê-la provida por sua família.\n\nPara ter direito, é necessário que a renda por pessoa do grupo familiar seja igual ou menor que 1/4 do salário mínimo.\n\nPor se tratar de um benefício assistencial, não é necessário ter contribuído para o INSS para ter direito a ele. No entanto, este benefício não paga 13º salário e não gera direito à pensão por morte.\n\nOs tipos mais comuns são:\n\n• Benefício assistencial à pessoa com deficiência\nBenefício assistencial à pessoa idosaBenefício assistencial à pessoa com deficiência (BPC-Loas)\n\nÉ a garantia de um salário mínimo mensal à pessoa com deficiência que comprove não possuir meios de prover a própria manutenção, nem de tê-la provida por sua família.Benefício assistencial à pessoa idosa (BPC-Loas)É a garantia de um salário mínimo mensal a pessoa idosa maior de 65 (sessenta e cinco anos) que comprove não possuir meios de prover a própria manutenção, nem de tê-la provida por sua família."]
+    },
+    {
+      "tag": "incapacidade",
+      "patterns": ["Incapacidade"],
+      "responses": ["Os benefícios por incapacidade são pagos aos segurados do INSS que estão impossibilitados de trabalhar em razão de alguma doença incapacitante ou a quem possua redução da capacidade de trabalho após ter sofrido algum acidente. Dessa forma, eles são três:\nAposentadoria por incapacidade permanente (que é a antiga aposentadoria por invalidez);\nAuxílio por incapacidade temporária (o antigo auxílio-doença);\nAuxílio-acidente\n\nDigite 'permanente' para mais informações, digite 'temporário' para mais informações ou 'acidente' para mais informações"]
+    },
+    {
+      "tag": "permanente",
+      "patterns": ["Permanente"],
+      "responses": ["Aposentadoria por incapacidade permanente (que é a antiga aposentadoria por invalidez) é concedida aos trabalhadores que não são mais considerados aptos, permanentemente, para exercer a suas funções. Essa situação que pode ser causada por diversos motivos, como acidentes, deficiência e doenças progressivas."]
+    },
+    {
+      "tag": "temporario",
+      "patterns": ["Temporário"],
+      "responses": ["O Auxílio por incapacidade temporária, antes conhecido como Auxílio-doença, é um benefício devido ao segurado do INSS que comprove, em perícia médica, estar incapacitado temporariamente o  para o trabalho ou sua atividade habitual por mais de 15 (quinze) dias consecutivos em decorrência de doença ou acidente.  Principais requisitos: \n• Possuir qualidade de segurado; \n• Comprovar, em perícia médica, a incapacidade para o seu trabalho ou para a sua atividade habitual por mais de 15 (quinze) dias consecutivos. \n• Em regra, cumprir carência de 12 contribuições mensais."]
+    },
+    {
+      "tag": "acidente",
+      "patterns": ["Acidente"],
+      "responses": ["Auxílio-Acidente, Previsto no artigo 86 da Lei 8.213/91, o auxílio-acidente é benefício previdenciário de cunho indenizatório, sendo devido ao segurado acidentado, quando, após a consolidação das lesões decorrentes de acidente de qualquer natureza, resultarem sequelas que impliquem redução da capacidade para a atividade laborativa habitual.Este benefício não possui caráter substitutivo da renda proveniente do trabalho, pois é recebido pelo segurado cumulativamente com o salário. Via de regra, os requisitos para a concessão do benefício de auxílio-acidente são:\n• Possuir qualidade de segurado;\n• Ter sofrido um acidente de qualquer natureza;\n• Possuir redução parcial e definitiva da capacidade para o trabalho habitual;\n• Possuir nexo causal entre o acidente e a redução da capacidade."]
     }
   ]
 }
